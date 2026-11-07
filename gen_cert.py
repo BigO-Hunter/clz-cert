@@ -157,8 +157,11 @@ S_K0 = S_sinc((ALOs, AHIs))   # K(0) = 1/2[sinc(-a)+sinc(a)] = sinc(a)
 
 def S_k2(X):
     kk = S_div(S_K(X), S_K0)
-    if kk[0] >= 0: return S_mul(kk, kk)[0]
-    if kk[1] <= 0: return S_mul(kk, kk)[1]
+    # FIXED (R-clz S_k2 bug, found by sibling lane CLZ-C): the square's lower
+    # endpoint is S_mul(kk,kk)[0] in BOTH branches; the old code returned [1]
+    # (the upper endpoint) on the negative branch, overstating w there.
+    if kk[0] >= 0 or kk[1] <= 0:
+        return S_mul(kk, kk)[0]
     return 0
 
 def k2_lb(xint):
