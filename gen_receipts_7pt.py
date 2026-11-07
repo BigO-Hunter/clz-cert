@@ -41,12 +41,11 @@ def dec(x):
     d = x.denominator
     k = 0
     while d % 2 == 0: d //= 2; k += 1
-    k2 = 0
-    d = x.denominator
-    while d % 5 == 0: d //= 5; k2 += 1
-    k = max(k, k2)
+    while d % 5 == 0: d //= 5; k += 1
     assert d == 1, f"non-terminating {x}"
     num = x.numerator * (10 ** k) // x.denominator
+    if k == 0:
+        return str(num)
     s = str(abs(num)).rjust(k + 1, "0")
     return ("-" if num < 0 else "") + s[:-k] + "." + s[-k:]
 

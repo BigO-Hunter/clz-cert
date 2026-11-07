@@ -8,11 +8,15 @@ Small proof-shapes that every generated wcell/obcell/box theorem needs:
 - `pow2_le_factorial_sq`: the monotonicity hypothesis of the proved
   `sin_series_sandwich_pos/neg`, discharged once from `x^2 ≤ 6`.
 - `corner_div_bracket`: the division close of a `sinc_bracket` piece: the
-  ratio `num/t` over the box `[tlo,thi] × [P,Q]` is monotone in each
+  ratio `num/t` over the box `[tlo,thi] x [P,Q]` is monotone in each
   variable separately, so its extremes sit at the four corners; the four
   emitted corner facts give the bracket.
-- `pi_mul_lb` / `pi_mul_ub`: `π*x` outward products from the 20-digit
-  constants (nonnegative `x`).
+- `pi_mul_lb/ub` (+`_neg`): `pi*x` outward products from the 20-digit
+  constants.
+- `sin_shift_pos/neg` + `sin_shift_posZ`: `sin t = (-1)^j sin(pi*((t-j*pi)/pi))`
+  for literal `j`.
+- `pow_odd_mono`: odd powers are monotone on all of `R` (term facts for
+  negative reduced windows).
 -/
 
 namespace CLZ.Cert
@@ -68,8 +72,8 @@ theorem pi_mul_ub (x hi q : ℝ) (hx0 : 0 ≤ x) (hxh : x ≤ hi)
   have h2 : q * x ≤ q * hi := mul_le_mul_of_nonneg_left hxh (by positivity)
   exact le_trans h1 h2
 
-/-- `q*lo ≤ π*x` for `lo ≤ 0 ≤ ...`, `lo ≤ x`, `π ≤ q` (negative-side
-product bound; `q*lo ≤ π*lo ≤ π*x`). -/
+/-- `q*lo ≤ π*x` for `lo ≤ 0 ≤ x`, `lo ≤ x`, `π ≤ q` (negative-side
+product bound). -/
 theorem pi_mul_lb_neg (x lo q : ℝ) (hlo : lo ≤ 0) (hlx : lo ≤ x)
     (hqle : (3.14159265358979323847 : ℝ) ≤ q) : q * lo ≤ π * x := by
   have hpq : π ≤ q := CLZ.pi_ub.le.trans hqle
@@ -93,7 +97,7 @@ theorem sin_shift_pos (t : ℝ) (n : ℕ) :
     _ = (-1:ℝ)^n * sin (t - (n:ℝ)*π) := sin_add_nat_pi _ n
     _ = (-1:ℝ)^((n:ℤ)) * sin (π * ((t - (n:ℝ)*π) / π)) := by rw [hstep, zpow_natCast]
 
-/-- `sin t = (-1)^(-n) sin(π*((t + n*π)/π))` (literal negative shift; note
+/-- `sin t = (-1)^n sin(π*((t + n*π)/π))` (literal negative shift; note
 `(-1)^(-n) = (-1)^n` for the literals `norm_num` evaluates). -/
 theorem sin_shift_neg (t : ℝ) (n : ℕ) :
     sin t = (-1 : ℝ)^n * sin (π * ((t + (n:ℝ)*π) / π)) := by
@@ -101,5 +105,32 @@ theorem sin_shift_neg (t : ℝ) (n : ℕ) :
   calc sin t = sin ((t + (n:ℝ)*π) - (n:ℝ)*π) := by congr 1; ring
     _ = (-1:ℝ)^n * sin (t + (n:ℝ)*π) := sin_sub_nat_pi _ n
     _ = (-1:ℝ)^n * sin (π * ((t + (n:ℝ)*π) / π)) := by rw [hstep]
+
+/-- `sin t = (-1)^n sin(π*((t − n*π)/π))` for integer `n ≥ 0` (literal). -/
+theorem sin_shift_posZ (t : ℝ) (n : ℤ) (hn : 0 ≤ n) :
+    sin t = (-1:ℝ)^n * sin (π * ((t - (n:ℝ)*π) / π)) := by
+  obtain ⟨m, rfl⟩ : ∃ m : ℕ, n = (m:ℤ) := ⟨n.toNat, (Int.toNat_of_nonneg hn).symm⟩
+  rw [Int.cast_natCast]
+  exact sin_shift_pos t m
+
+/-- Odd powers are monotone on all of `ℝ` (term facts for negative
+reduced windows). -/
+theorem pow_odd_mono (x y : ℝ) (n : ℕ) (hn : Odd n) (h : x ≤ y) : x^n ≤ y^n := by
+  rcases le_or_gt 0 y with hy | hy
+  · rcases le_or_gt 0 x with hx | hx
+    · exact pow_le_pow_left₀ hx h n
+    · have h2 := Odd.neg_pow hn x
+      have h3 : 0 ≤ (-x)^n := pow_nonneg (by linarith) n
+      have h4 : 0 ≤ y^n := pow_nonneg hy n
+      rw [h2] at h3
+      linarith
+  · have hx0 : 0 ≤ -x := by linarith
+    have hy0 : 0 ≤ -y := by linarith
+    have hxy : -y ≤ -x := by linarith
+    have h1 := pow_le_pow_left₀ hy0 hxy n
+    have h2 := Odd.neg_pow hn x
+    have h3 := Odd.neg_pow hn y
+    rw [h2, h3] at h1
+    linarith
 
 end CLZ.Cert

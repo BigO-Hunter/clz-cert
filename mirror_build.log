@@ -1,0 +1,22 @@
+  cell 0/45608 t=0s
+  cell 5000/45608 t=7s
+  cell 10000/45608 t=14s
+  cell 15000/45608 t=21s
+  cell 20000/45608 t=29s
+  cell 25000/45608 t=36s
+  cell 30000/45608 t=43s
+  cell 35000/45608 t=50s
+  cell 40000/45608 t=57s
+  cell 45000/45608 t=63s
+mpmath sweep...
+  mp 0/45608 t=64s
+  mp 5000/45608 t=67s
+  mp 10000/45608 t=70s
+  mp 15000/45608 t=74s
+  mp 20000/45608 t=77s
+  mp 25000/45608 t=81s
+  mp 30000/45608 t=84s
+  mp 35000/45608 t=87s
+  mp 40000/45608 t=90s
+  mp 45000/45608 t=93s
+done: reflected=901 bad_nonneg=20 sib_diff=41 mp_bad=0 ob_pass=8235 ob_fail=37373 t=93.6s
