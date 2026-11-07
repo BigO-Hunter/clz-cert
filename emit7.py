@@ -306,6 +306,10 @@ def emit_shift(ind, j, tag, tlod, thid):
          f"{ind}    exact CLZ.Cert.sin_shift_neg t {n}"]
     return L
 
+SER = None  # optional slim replacement for emit_ser (set by slim.py)
+WPAD = 0    # soundness pad on the table value (slim sets 1e-12: snapped
+            # piece arithmetic loses ~1e-16, budget is 2.1e-8 over 21 terms)
+
 def emit_piece(ind, tag, pc):
     """all the piece haves for one sinc_bracket piece."""
     j = pc["j"]
@@ -313,7 +317,7 @@ def emit_piece(ind, tag, pc):
     L = []
     L += emit_mem(ind, JZ, JR, j, pc["s0"], pc["s1"], pc["tlo"], pc["thi"], tag)
     L += emit_shift(ind, j, tag, g.dec(pc["tlo"]), g.dec(pc["thi"]))
-    L += emit_ser(ind, pc["s0"], pc["s1"], pc["P"], pc["Q"], tag)
+    L += (SER or emit_ser)(ind, pc["s0"], pc["s1"], pc["P"], pc["Q"], tag)
     L += emit_div(ind, JZ, JR, j, pc["s0"], pc["s1"], pc["P"], pc["Q"],
                   pc["tlo"], pc["thi"], pc["lo"], pc["hi"], tag)
     return L
@@ -400,10 +404,13 @@ def bracket_bounds(i):
     K2 = (g.slo(min(p["lo"] for p in p2)), g.shi(max(p["hi"] for p in p2)))
     return (t1lo, t1hi), (t2lo, t2hi), refl, p1, K1, p2, K2
 
-def emit_wcell(i, wt):
+def emit_wcell(i, wt, ser=None):
+    global SER
+    if ser is not None:
+        SER = ser
     """the full wcell_i theorem text."""
     lo, hi = g.cell_lo(i), g.cell_hi(i)
-    W = F(wt[i], G45)
+    W = g.slo(F(wt[i], G45) - WPAD)
     (t1lo, t1hi), (t2lo, t2hi), refl, p1, K1, p2, K2 = bracket_bounds(i)
     KL = g.slo((K1[0] + K2[0]) / 2)
     KH = g.shi((K1[1] + K2[1]) / 2)

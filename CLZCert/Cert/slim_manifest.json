@@ -1,0 +1,14 @@
+{
+"0": {
+"file": "CLZCert/Cert/Slim_00000.lean",
+"start": 0,
+"stop": 16,
+"sha": "b607c95bbff4bf5069af3b3750e835a2f8976c17086c4c0a50835c1108edd1c5"
+},
+"16": {
+"file": "CLZCert/Cert/Slim_00016.lean",
+"start": 16,
+"stop": 80,
+"sha": "5a2c96f5a89d5684643ffcb6acfb338aebaa0e33cbd9064db1ddcdcc5676a376"
+}
+}
