@@ -236,4 +236,48 @@ theorem Kfn0_ub : Kfn 0 ≤ (0.918725369865574401307762900255801616701254273 : �
     _ ≤ (0.918725369865574401307762900255801616701254273:ℝ) * a :=
         mul_le_mul_of_nonneg_left a_lb (by norm_num)
 
+/-- Near-zero bracket: `sinc ∈ [1 − δ²/6 − δ⁴/120, 1]` on `[0, δ]`, `δ ≤ 1`
+(includes `t = 0`; used by the reflected early-cell receipts). -/
+theorem sinc_near1 (δ t : ℝ) (hnn : 0 ≤ t) (hδt : t ≤ δ) (hδ1 : δ ≤ 1) :
+    (1:ℝ) - δ^2/6 - δ^4/120 ≤ sinc t ∧ sinc t ≤ 1 := by
+  by_cases h0 : t = 0
+  · subst h0
+    have hδ0 : (0:ℝ) ≤ δ^2 := sq_nonneg δ
+    have hδ4 : (0:ℝ) ≤ δ^4 := by nlinarith
+    have hs0 : sinc 0 = 1 := by simp [Real.sinc]
+    constructor
+    · linarith
+    · linarith
+  · have hpos : 0 < t := lt_of_le_of_ne hnn (Ne.symm h0)
+    have hmono : ∀ k : ℕ, t^2 ≤ (2*k+2)*(2*k+3) := by
+      intro k
+      have h1 : t^2 ≤ 1 := by
+        nlinarith [hδt.trans hδ1, abs_nonneg t]
+      have hk0 : (0:ℝ) ≤ (k:ℝ) := Nat.cast_nonneg _
+      nlinarith
+    have hb := sin_partial_abs_bound t (le_of_lt hpos) 1 hmono
+    obtain ⟨hlo, -⟩ := abs_le.1 hb
+    rw [show (1+1 : ℕ) = 2 from rfl, show (2*1+3 : ℕ) = 5 from rfl,
+      show ((5 : ℕ)! : ℝ) = 120 from by norm_num] at hlo
+    norm_num [Finset.sum_range_succ] at hlo
+    have hsw : sin t ≥ t - t^3/6 - t^5/120 := by linarith
+    have hsw' : sinc t = sin t / t := by simp [Real.sinc, h0]
+    have hd6 : (0:ℝ) < 6 := by norm_num
+    have hd120 : (0:ℝ) < 120 := by norm_num
+    have hup : sin t ≤ t := (sin_lt hpos).le
+    have hlo1 : (1:ℝ) - t^2/6 - t^4/120 ≤ sinc t := by
+      rw [hsw', le_div_iff₀ hpos]
+      have h5 : (0:ℝ) ≤ t^5 := by nlinarith [hpos.le]
+      linarith [hsw]
+    have hup2 : sinc t ≤ 1 := by
+      rw [hsw']; exact (div_le_one hpos).mpr hup
+    have ht2 : t^2 ≤ δ^2 := by nlinarith [hδt, abs_nonneg t]
+    have ht4 : t^4 ≤ δ^4 := by
+      have h2 : t^2 ≤ δ^2 := ht2
+      nlinarith
+    constructor
+    · calc (1:ℝ) - δ^2/6 - δ^4/120 ≤ 1 - t^2/6 - t^4/120 := by nlinarith
+      _ ≤ sinc t := hlo1
+    · exact hup2
+
 end CLZ.Cert
