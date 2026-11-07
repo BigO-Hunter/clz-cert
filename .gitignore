@@ -7,3 +7,5 @@ __pycache__/
 *.trace
 *.hash
 zeta-simple-zeros/
+CLZCert/Cert/BoxCheck_*.lean
+CLZCert/Cert/Slim_0*.lean

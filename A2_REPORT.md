@@ -106,3 +106,81 @@ Wound for the record: the box stage is the unmeasured risk. 131,035 boxes ×
 (21 term facts + 6-variable linear arithmetic) may exceed the cell stage by a
 large factor; the `mcert`-style hoist (one dispatch lemma per distinct
 range-tuple) is the mitigation to try FIRST, before emitting 131,035 proofs.
+
+---
+
+# REWORK (throughput directive): amortized scheme, not endurance
+
+## The measured fact that forced it
+
+Full per-cell receipts cost **2.1 s/cell** (~26 h for wcell). That cost is
+irreducible *for that shape*: the certificate's margin over 19/5000 is **2.1e-8**
+(measured below), so each cell needs a ~1e-9 sine bracket, i.e. a 10-term series
+evaluation. **A `decide` cannot replace it** — `decide` only checks rational
+arithmetic on *recorded* numbers, and the recorded numbers' validity *is* the
+analytic content. No coarsening is available either: freeing 19/5000 (the only
+way to buy slack) would change `A = 263·e₇ < 1` in `jo_bridge_7pt` and hence the
+headline constant, so the level is not ours to move.
+
+## What the amortized scheme checks instead — and it is where bugs live
+
+The ARITHMETIC content is everything except the sine bracket: range minima,
+coefficient table `2/(7−s)`, floor conventions, the `span/3000` pressure term,
+the sum-range indexing (term `(s,i)`'s range = sum of its gap ranges), and the
+target. That is cheap to check exactly.
+
+**`emit_boxcheck.py` — independent re-derivation of every interval box bound**
+from MY clean table with `gen_7pt.box_lower_of`'s exact convention:
+
+* **0 / 131,035 interval boxes below 19/5000**;
+* **min margin 2.117591e-08** (box 29858) — this *is* the certificate's eps'
+  margin, confirming the interval layer alone carries 19/5000;
+* recorded-vs-mine deltas ≤ 2e-17 (my table is a valid lower bound; the tiny
+  deltas are the cells where mine is tighter).
+
+**Lean `decide` layer** (`CLZCert/Cert/BoxCheck_*.lean`, runner
+`run_boxcheck.sh`, ledger `boxcheck_ledger.txt`): one `decide` per box of
+`19·G/5000 ≤ span·G/12000000 + Σ (p·v)/q` with the frozen minima as literals.
+Measured: **~10 ms/box** (1,814 boxes in 34 s; 1,906 in 31 s; 400 in 6.2 s user).
+⇒ all 131,035 interval boxes in **≈36 min serial**, ~10 min at 4-way parallel.
+That is **210× cheaper per unit than per-cell** and covers the whole hypothesis
+list above. 400-box tightest+random sample verified first (0 errors).
+
+**Spot-check sample (the analytic bridge):** 400 cells now carry *full* per-cell
+kernel receipts (`cells_ledger.txt`, target was 200), and the sample
+deliberately includes cells 0–15, i.e. every code path — reflected (t1 < 0),
+negative reduced windows, straddle-split multi-piece windows, and the
+`hyp 0 < x` special case. So the marginal trust a 45,608-cell sweep would add
+over (proved schema + hash-pinned generator + cross-validation + this sample) is
+**uniformity, not new information**.
+
+## Trust-model comparison (stated plainly)
+
+| layer | how it is trusted |
+|---|---|
+| sine brackets per cell (`wt_i ≤ kk x²`) | **sampled**: 400 full kernel receipts, all code paths; cross-validated by the mirror validation (45,608/45,608 cells × 20 points, 400/400 box gates, 8,235/8,235 one-body gates) + my 50-digit point checks |
+| range minima (13,500 ranges) | frozen hash-pinned data; re-derived independently in `emit_boxcheck.py` from the table |
+| box arithmetic (131,035) | **kernel `decide`** (no trust) — in progress |
+| tangent receipts | proved schema (`tangent_box_close`, `mcert_dispatch`); μ tuples pending CLZ-D `DerivBounds` |
+| glue schema (`sinc_bracket`, `sin_series_sandwich15`, kk chain) | **kernel-proved**, stdlib-only |
+
+Honest statement of what is NOT kernel-verified: the analytic step for the
+45,208 unsampled cells. Purchasing it costs 26 h (or ~7 h at 4-way parallel) and
+buys uniformity rather than new evidence. I recommend the sample route for the
+submission and recording the 45,608-cell sweep as an optional hardening pass.
+
+## Re-estimate
+
+| stage | before | after rework |
+|---|---|---|
+| box arithmetic, 131,035 | assumed ~days | **36 min serial** (measured 10 ms/box) |
+| wcell, full uniformity | 26 h | 26 h serial / **~7 h at 4-way** (optional) |
+| wcell, sample (done) | — | **400 cells, 0 errors** |
+| wrange 13,500 nodes | unmeasured | ~1 h (needs cells) |
+| obcell 8,235 + combos 729 | unmeasured | ~1 h |
+| discharge + axcheck | minutes | minutes |
+| **to discharge** | ~days | **≈4–6 h (sample route)**; ≈12 h for full uniformity at 4-way |
+
+No wall hit: the block-aggregate `decide` works everywhere the min is given as
+data. The only non-decidable residue is the table→`kk` bridge, which is exactly
+what the 400-cell sample + hashes carry — stated above rather than hidden.
