@@ -1,0 +1,802 @@
+[
+  {
+    "name": "ajp88-ra-window-nine-point",
+    "path": "submissions/ajp88-ra-window-nine-point",
+    "sha": "d03ebfd5de3a116e5283b9a0898bc8bbcdee3cf5",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/ajp88-ra-window-nine-point?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/ajp88-ra-window-nine-point",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/d03ebfd5de3a116e5283b9a0898bc8bbcdee3cf5",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/ajp88-ra-window-nine-point?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/d03ebfd5de3a116e5283b9a0898bc8bbcdee3cf5",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/ajp88-ra-window-nine-point"
+    }
+  },
+  {
+    "name": "ajp88-reweighted-nine-point",
+    "path": "submissions/ajp88-reweighted-nine-point",
+    "sha": "7165db8f9c6215ad30c7d1eeb54e46e302fda842",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/ajp88-reweighted-nine-point?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/ajp88-reweighted-nine-point",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/7165db8f9c6215ad30c7d1eeb54e46e302fda842",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/ajp88-reweighted-nine-point?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/7165db8f9c6215ad30c7d1eeb54e46e302fda842",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/ajp88-reweighted-nine-point"
+    }
+  },
+  {
+    "name": "ajp88-s1r-window-nine-point",
+    "path": "submissions/ajp88-s1r-window-nine-point",
+    "sha": "79b65d3d2134a787c56a34a58993266af0027004",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/ajp88-s1r-window-nine-point?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/ajp88-s1r-window-nine-point",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/79b65d3d2134a787c56a34a58993266af0027004",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/ajp88-s1r-window-nine-point?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/79b65d3d2134a787c56a34a58993266af0027004",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/ajp88-s1r-window-nine-point"
+    }
+  },
+  {
+    "name": "ajp88-w9a2-window-nine-point",
+    "path": "submissions/ajp88-w9a2-window-nine-point",
+    "sha": "cb94cb18618dae30222cdeb831d16dfb5e003099",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/ajp88-w9a2-window-nine-point?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/ajp88-w9a2-window-nine-point",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/cb94cb18618dae30222cdeb831d16dfb5e003099",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/ajp88-w9a2-window-nine-point?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/cb94cb18618dae30222cdeb831d16dfb5e003099",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/ajp88-w9a2-window-nine-point"
+    }
+  },
+  {
+    "name": "attempt--023",
+    "path": "submissions/attempt--023",
+    "sha": "08dbed1865616b19ce20ef95427dd5ab9be0616f",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt--023?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt--023",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/08dbed1865616b19ce20ef95427dd5ab9be0616f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt--023?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/08dbed1865616b19ce20ef95427dd5ab9be0616f",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt--023"
+    }
+  },
+  {
+    "name": "attempt-002",
+    "path": "submissions/attempt-002",
+    "sha": "f4b33caf376e2294e9844533fa89e9b622ca4f2e",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-002?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-002",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/f4b33caf376e2294e9844533fa89e9b622ca4f2e",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-002?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/f4b33caf376e2294e9844533fa89e9b622ca4f2e",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-002"
+    }
+  },
+  {
+    "name": "attempt-005",
+    "path": "submissions/attempt-005",
+    "sha": "ed312fcf117497f3eebea769969f53e31b3cc583",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-005?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-005",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/ed312fcf117497f3eebea769969f53e31b3cc583",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-005?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/ed312fcf117497f3eebea769969f53e31b3cc583",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-005"
+    }
+  },
+  {
+    "name": "attempt-009",
+    "path": "submissions/attempt-009",
+    "sha": "8d5687cc25ac7dc1fb1f84ad2c9f1b7722361bd3",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-009?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-009",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/8d5687cc25ac7dc1fb1f84ad2c9f1b7722361bd3",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-009?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/8d5687cc25ac7dc1fb1f84ad2c9f1b7722361bd3",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-009"
+    }
+  },
+  {
+    "name": "attempt-010",
+    "path": "submissions/attempt-010",
+    "sha": "4a8542d4fb7e6885640aecbc304b131b8115b498",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-010?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-010",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/4a8542d4fb7e6885640aecbc304b131b8115b498",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-010?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/4a8542d4fb7e6885640aecbc304b131b8115b498",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-010"
+    }
+  },
+  {
+    "name": "attempt-012",
+    "path": "submissions/attempt-012",
+    "sha": "321cdada1fbe2d012ce99b96b177c306f2c56d66",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-012?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-012",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/321cdada1fbe2d012ce99b96b177c306f2c56d66",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-012?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/321cdada1fbe2d012ce99b96b177c306f2c56d66",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-012"
+    }
+  },
+  {
+    "name": "attempt-013",
+    "path": "submissions/attempt-013",
+    "sha": "435712c453f6318ee4c6d0a76bf5695c3a3f9558",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-013?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-013",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/435712c453f6318ee4c6d0a76bf5695c3a3f9558",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-013?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/435712c453f6318ee4c6d0a76bf5695c3a3f9558",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-013"
+    }
+  },
+  {
+    "name": "attempt-014",
+    "path": "submissions/attempt-014",
+    "sha": "7dec5525445734624dcbd8c5fcd17f73e280c98f",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-014?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-014",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/7dec5525445734624dcbd8c5fcd17f73e280c98f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-014?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/7dec5525445734624dcbd8c5fcd17f73e280c98f",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-014"
+    }
+  },
+  {
+    "name": "attempt-015",
+    "path": "submissions/attempt-015",
+    "sha": "318f91c6b6db769f084b0f1df66c53af2f13559d",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-015?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-015",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/318f91c6b6db769f084b0f1df66c53af2f13559d",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-015?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/318f91c6b6db769f084b0f1df66c53af2f13559d",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-015"
+    }
+  },
+  {
+    "name": "attempt-016",
+    "path": "submissions/attempt-016",
+    "sha": "d6199cebee52142aac286baf691b942616e84d59",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-016?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-016",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/d6199cebee52142aac286baf691b942616e84d59",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-016?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/d6199cebee52142aac286baf691b942616e84d59",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-016"
+    }
+  },
+  {
+    "name": "attempt-020",
+    "path": "submissions/attempt-020",
+    "sha": "bc745a9071c2b82bb6d2df19227443e488f0629f",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-020?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-020",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/bc745a9071c2b82bb6d2df19227443e488f0629f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-020?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/bc745a9071c2b82bb6d2df19227443e488f0629f",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-020"
+    }
+  },
+  {
+    "name": "attempt-021",
+    "path": "submissions/attempt-021",
+    "sha": "427d679e635e209ff78633a5a3ae43aa038830a2",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-021?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-021",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/427d679e635e209ff78633a5a3ae43aa038830a2",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-021?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/427d679e635e209ff78633a5a3ae43aa038830a2",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-021"
+    }
+  },
+  {
+    "name": "attempt-022",
+    "path": "submissions/attempt-022",
+    "sha": "89eea54d397fd395a8fdaac4f5e051277dd86600",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-022?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-022",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/89eea54d397fd395a8fdaac4f5e051277dd86600",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-022?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/89eea54d397fd395a8fdaac4f5e051277dd86600",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-022"
+    }
+  },
+  {
+    "name": "attempt-024",
+    "path": "submissions/attempt-024",
+    "sha": "c394e9592479b1fc2a0d142413fe70cd738aff8c",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-024?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-024",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/c394e9592479b1fc2a0d142413fe70cd738aff8c",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-024?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/c394e9592479b1fc2a0d142413fe70cd738aff8c",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-024"
+    }
+  },
+  {
+    "name": "attempt-030",
+    "path": "submissions/attempt-030",
+    "sha": "92623791bad112c03fdfc0d8cdce44e6a14132d5",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-030?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-030",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/92623791bad112c03fdfc0d8cdce44e6a14132d5",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-030?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/92623791bad112c03fdfc0d8cdce44e6a14132d5",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-030"
+    }
+  },
+  {
+    "name": "attempt-031",
+    "path": "submissions/attempt-031",
+    "sha": "1f78ddeb62a320e69302bdb2bb4e2c7c7bf280f1",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-031?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-031",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/1f78ddeb62a320e69302bdb2bb4e2c7c7bf280f1",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-031?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/1f78ddeb62a320e69302bdb2bb4e2c7c7bf280f1",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-031"
+    }
+  },
+  {
+    "name": "attempt-032",
+    "path": "submissions/attempt-032",
+    "sha": "21f91a75677adf7705c3fb588fbac8639ecee297",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-032?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-032",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/21f91a75677adf7705c3fb588fbac8639ecee297",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/attempt-032?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/21f91a75677adf7705c3fb588fbac8639ecee297",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/attempt-032"
+    }
+  },
+  {
+    "name": "beiyi-ten-hw-floor42",
+    "path": "submissions/beiyi-ten-hw-floor42",
+    "sha": "ed6b03df7dc642309f721ae5f59dda351623ee2a",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/beiyi-ten-hw-floor42?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/beiyi-ten-hw-floor42",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/ed6b03df7dc642309f721ae5f59dda351623ee2a",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/beiyi-ten-hw-floor42?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/ed6b03df7dc642309f721ae5f59dda351623ee2a",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/beiyi-ten-hw-floor42"
+    }
+  },
+  {
+    "name": "beiyi-ten-raise-c",
+    "path": "submissions/beiyi-ten-raise-c",
+    "sha": "79ac97519a676d089ae7a113cae4daa33146a05a",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/beiyi-ten-raise-c?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/beiyi-ten-raise-c",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/79ac97519a676d089ae7a113cae4daa33146a05a",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/beiyi-ten-raise-c?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/79ac97519a676d089ae7a113cae4daa33146a05a",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/beiyi-ten-raise-c"
+    }
+  },
+  {
+    "name": "beiyi-ten-releaf10",
+    "path": "submissions/beiyi-ten-releaf10",
+    "sha": "bb26b7dfc5247a6da9cc1cad5417c9f4ad09d664",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/beiyi-ten-releaf10?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/beiyi-ten-releaf10",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/bb26b7dfc5247a6da9cc1cad5417c9f4ad09d664",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/beiyi-ten-releaf10?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/bb26b7dfc5247a6da9cc1cad5417c9f4ad09d664",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/beiyi-ten-releaf10"
+    }
+  },
+  {
+    "name": "beiyi-ten-strongcover-t014",
+    "path": "submissions/beiyi-ten-strongcover-t014",
+    "sha": "2354c50ed268421b9274bbef8045e6942a2a02ad",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/beiyi-ten-strongcover-t014?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/beiyi-ten-strongcover-t014",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/2354c50ed268421b9274bbef8045e6942a2a02ad",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/beiyi-ten-strongcover-t014?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/2354c50ed268421b9274bbef8045e6942a2a02ad",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/beiyi-ten-strongcover-t014"
+    }
+  },
+  {
+    "name": "critical-strip-exclusion-attempt-1",
+    "path": "submissions/critical-strip-exclusion-attempt-1",
+    "sha": "a6f11df969cfeab8ed6e07ffa740fe9b36f0a34f",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/critical-strip-exclusion-attempt-1?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/critical-strip-exclusion-attempt-1",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/a6f11df969cfeab8ed6e07ffa740fe9b36f0a34f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/critical-strip-exclusion-attempt-1?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/a6f11df969cfeab8ed6e07ffa740fe9b36f0a34f",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/critical-strip-exclusion-attempt-1"
+    }
+  },
+  {
+    "name": "dani-bound-2026",
+    "path": "submissions/dani-bound-2026",
+    "sha": "7bdeac9ae43513c9325a07f1999410782cc2bfe4",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/dani-bound-2026?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/dani-bound-2026",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/7bdeac9ae43513c9325a07f1999410782cc2bfe4",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/dani-bound-2026?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/7bdeac9ae43513c9325a07f1999410782cc2bfe4",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/dani-bound-2026"
+    }
+  },
+  {
+    "name": "example",
+    "path": "submissions/example",
+    "sha": "81366882fee63d11e937591822aaf516c613eb0f",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/example?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/example",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/81366882fee63d11e937591822aaf516c613eb0f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/example?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/81366882fee63d11e937591822aaf516c613eb0f",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/example"
+    }
+  },
+  {
+    "name": "five-point-pyramid-2",
+    "path": "submissions/five-point-pyramid-2",
+    "sha": "f2fb7fd77df90683cac0675da4b0d1d5d79e1d2f",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/five-point-pyramid-2?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/five-point-pyramid-2",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/f2fb7fd77df90683cac0675da4b0d1d5d79e1d2f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/five-point-pyramid-2?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/f2fb7fd77df90683cac0675da4b0d1d5d79e1d2f",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/five-point-pyramid-2"
+    }
+  },
+  {
+    "name": "five-point-pyramid",
+    "path": "submissions/five-point-pyramid",
+    "sha": "92828b2e5709abfcfe0b4b9bb66ff3118c89669d",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/five-point-pyramid?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/five-point-pyramid",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/92828b2e5709abfcfe0b4b9bb66ff3118c89669d",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/five-point-pyramid?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/92828b2e5709abfcfe0b4b9bb66ff3118c89669d",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/five-point-pyramid"
+    }
+  },
+  {
+    "name": "flow-test",
+    "path": "submissions/flow-test",
+    "sha": "a48ac6d499cf9813f93c57eb209287b372908164",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/flow-test?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/flow-test",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/a48ac6d499cf9813f93c57eb209287b372908164",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/flow-test?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/a48ac6d499cf9813f93c57eb209287b372908164",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/flow-test"
+    }
+  },
+  {
+    "name": "lixiang90-nine-point-refinement",
+    "path": "submissions/lixiang90-nine-point-refinement",
+    "sha": "1cee4c55e507108c87f17cd6ed3350441347636f",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/lixiang90-nine-point-refinement?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/lixiang90-nine-point-refinement",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/1cee4c55e507108c87f17cd6ed3350441347636f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/lixiang90-nine-point-refinement?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/1cee4c55e507108c87f17cd6ed3350441347636f",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/lixiang90-nine-point-refinement"
+    }
+  },
+  {
+    "name": "lixiang90-single-exception-overlap-20261018",
+    "path": "submissions/lixiang90-single-exception-overlap-20261018",
+    "sha": "e161acef890e64a67d47f335be7729de783d9464",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/lixiang90-single-exception-overlap-20261018?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/lixiang90-single-exception-overlap-20261018",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/e161acef890e64a67d47f335be7729de783d9464",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/lixiang90-single-exception-overlap-20261018?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/e161acef890e64a67d47f335be7729de783d9464",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/lixiang90-single-exception-overlap-20261018"
+    }
+  },
+  {
+    "name": "lixiang90-w9a2-hw-rounding-v12-20261021",
+    "path": "submissions/lixiang90-w9a2-hw-rounding-v12-20261021",
+    "sha": "c8fae441a3acb73e3564aa15ba730ac1a3a10776",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/lixiang90-w9a2-hw-rounding-v12-20261021?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/lixiang90-w9a2-hw-rounding-v12-20261021",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/c8fae441a3acb73e3564aa15ba730ac1a3a10776",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/lixiang90-w9a2-hw-rounding-v12-20261021?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/c8fae441a3acb73e3564aa15ba730ac1a3a10776",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/lixiang90-w9a2-hw-rounding-v12-20261021"
+    }
+  },
+  {
+    "name": "lixiang90-w9a2-point-center-v16-20261021",
+    "path": "submissions/lixiang90-w9a2-point-center-v16-20261021",
+    "sha": "1f43b52e16a0b0784e22ee9395e20b3d3f6d3b8f",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/lixiang90-w9a2-point-center-v16-20261021?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/lixiang90-w9a2-point-center-v16-20261021",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/1f43b52e16a0b0784e22ee9395e20b3d3f6d3b8f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/lixiang90-w9a2-point-center-v16-20261021?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/1f43b52e16a0b0784e22ee9395e20b3d3f6d3b8f",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/lixiang90-w9a2-point-center-v16-20261021"
+    }
+  },
+  {
+    "name": "master-of-puppets",
+    "path": "submissions/master-of-puppets",
+    "sha": "0421cc421d34102158d62a169efeb7a93ae471bd",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/master-of-puppets?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/master-of-puppets",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/0421cc421d34102158d62a169efeb7a93ae471bd",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/master-of-puppets?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/0421cc421d34102158d62a169efeb7a93ae471bd",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/master-of-puppets"
+    }
+  },
+  {
+    "name": "master-of-puppets2",
+    "path": "submissions/master-of-puppets2",
+    "sha": "141e38c979673f340ef7e8e951f25b2ec4aee344",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/master-of-puppets2?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/master-of-puppets2",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/141e38c979673f340ef7e8e951f25b2ec4aee344",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/master-of-puppets2?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/141e38c979673f340ef7e8e951f25b2ec4aee344",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/master-of-puppets2"
+    }
+  },
+  {
+    "name": "master-of-puppets3",
+    "path": "submissions/master-of-puppets3",
+    "sha": "42834c843757aad10dc878cfc9950ccc592a2148",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/master-of-puppets3?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/master-of-puppets3",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/42834c843757aad10dc878cfc9950ccc592a2148",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/master-of-puppets3?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/42834c843757aad10dc878cfc9950ccc592a2148",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/master-of-puppets3"
+    }
+  },
+  {
+    "name": "master-of-puppets4",
+    "path": "submissions/master-of-puppets4",
+    "sha": "86bb1501ae2b73087b62d4a7b882154f7371e845",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/master-of-puppets4?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/master-of-puppets4",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/86bb1501ae2b73087b62d4a7b882154f7371e845",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/master-of-puppets4?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/86bb1501ae2b73087b62d4a7b882154f7371e845",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/master-of-puppets4"
+    }
+  },
+  {
+    "name": "master-of-puppets5",
+    "path": "submissions/master-of-puppets5",
+    "sha": "08bca1ed526ea32cc675a91003b01fab6cfc414b",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/master-of-puppets5?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/master-of-puppets5",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/08bca1ed526ea32cc675a91003b01fab6cfc414b",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/master-of-puppets5?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/08bca1ed526ea32cc675a91003b01fab6cfc414b",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/master-of-puppets5"
+    }
+  },
+  {
+    "name": "master-of-puppets6",
+    "path": "submissions/master-of-puppets6",
+    "sha": "efb972e2d32dda2a73d8c90e61a53bf32e6cd295",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/master-of-puppets6?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/master-of-puppets6",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/efb972e2d32dda2a73d8c90e61a53bf32e6cd295",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/master-of-puppets6?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/efb972e2d32dda2a73d8c90e61a53bf32e6cd295",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/master-of-puppets6"
+    }
+  },
+  {
+    "name": "rishikhan-ten-point-certificate",
+    "path": "submissions/rishikhan-ten-point-certificate",
+    "sha": "805686091e7d1608088950e0d9f48956d514e76c",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/rishikhan-ten-point-certificate?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/rishikhan-ten-point-certificate",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/805686091e7d1608088950e0d9f48956d514e76c",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/rishikhan-ten-point-certificate?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/805686091e7d1608088950e0d9f48956d514e76c",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/rishikhan-ten-point-certificate"
+    }
+  },
+  {
+    "name": "seven-point-optimised-window",
+    "path": "submissions/seven-point-optimised-window",
+    "sha": "ef2d2ec9e10069d49ea1b3a421b384e2d2ca4102",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/seven-point-optimised-window?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/seven-point-optimised-window",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/ef2d2ec9e10069d49ea1b3a421b384e2d2ca4102",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/seven-point-optimised-window?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/ef2d2ec9e10069d49ea1b3a421b384e2d2ca4102",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/seven-point-optimised-window"
+    }
+  },
+  {
+    "name": "shi-anchor-variance-refinement-2026",
+    "path": "submissions/shi-anchor-variance-refinement-2026",
+    "sha": "0104bc95878723998a0d7e9d6f0958baddff1d07",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/shi-anchor-variance-refinement-2026?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/shi-anchor-variance-refinement-2026",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/0104bc95878723998a0d7e9d6f0958baddff1d07",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/shi-anchor-variance-refinement-2026?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/0104bc95878723998a0d7e9d6f0958baddff1d07",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/shi-anchor-variance-refinement-2026"
+    }
+  },
+  {
+    "name": "shi-exact-window-refinement-2026",
+    "path": "submissions/shi-exact-window-refinement-2026",
+    "sha": "80b2635f245bdb047318072d65da99f9b7f74577",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/shi-exact-window-refinement-2026?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/shi-exact-window-refinement-2026",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/80b2635f245bdb047318072d65da99f9b7f74577",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/shi-exact-window-refinement-2026?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/80b2635f245bdb047318072d65da99f9b7f74577",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/shi-exact-window-refinement-2026"
+    }
+  },
+  {
+    "name": "six-point-convex-basins-2",
+    "path": "submissions/six-point-convex-basins-2",
+    "sha": "86c809d1459c24ebd7eeda726fcf26575c5427f3",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/six-point-convex-basins-2?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/six-point-convex-basins-2",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/86c809d1459c24ebd7eeda726fcf26575c5427f3",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/six-point-convex-basins-2?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/86c809d1459c24ebd7eeda726fcf26575c5427f3",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/six-point-convex-basins-2"
+    }
+  },
+  {
+    "name": "six-point-convex-basins",
+    "path": "submissions/six-point-convex-basins",
+    "sha": "c5b599c775358893c88599985b4ca3f4e54837de",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/six-point-convex-basins?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/six-point-convex-basins",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/c5b599c775358893c88599985b4ca3f4e54837de",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/six-point-convex-basins?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/c5b599c775358893c88599985b4ca3f4e54837de",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/six-point-convex-basins"
+    }
+  },
+  {
+    "name": "six-point-optimised-window",
+    "path": "submissions/six-point-optimised-window",
+    "sha": "5711e88f488a7a4cd90dd29e33d587051739deb0",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/six-point-optimised-window?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/six-point-optimised-window",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/5711e88f488a7a4cd90dd29e33d587051739deb0",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/six-point-optimised-window?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/5711e88f488a7a4cd90dd29e33d587051739deb0",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/six-point-optimised-window"
+    }
+  },
+  {
+    "name": "six-point-window",
+    "path": "submissions/six-point-window",
+    "sha": "c6902f68ed2bae4e401a4194956feafd1c815f4e",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/six-point-window?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/six-point-window",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/c6902f68ed2bae4e401a4194956feafd1c815f4e",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/six-point-window?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/c6902f68ed2bae4e401a4194956feafd1c815f4e",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/six-point-window"
+    }
+  },
+  {
+    "name": "weighted-five-point-pyramid",
+    "path": "submissions/weighted-five-point-pyramid",
+    "sha": "4b2210cb7bc15abb8b66352b4676a9b042b89a91",
+    "size": 0,
+    "url": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/weighted-five-point-pyramid?ref=main",
+    "html_url": "https://github.com/josusanmartin/riemann/tree/main/submissions/weighted-five-point-pyramid",
+    "git_url": "https://api.github.com/repos/josusanmartin/riemann/git/trees/4b2210cb7bc15abb8b66352b4676a9b042b89a91",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/josusanmartin/riemann/contents/submissions/weighted-five-point-pyramid?ref=main",
+      "git": "https://api.github.com/repos/josusanmartin/riemann/git/trees/4b2210cb7bc15abb8b66352b4676a9b042b89a91",
+      "html": "https://github.com/josusanmartin/riemann/tree/main/submissions/weighted-five-point-pyramid"
+    }
+  }
+]
