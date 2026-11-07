@@ -1,0 +1,8 @@
+.zlake
+.lake/packages
+refine_min.py
+__pycache__/
+*.olean
+*.ilean
+*.trace
+*.hash
