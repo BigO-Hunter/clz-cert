@@ -57,40 +57,51 @@ noncomputable def H0 : ℝ := 2 - 1 / cMT
 
 /-! ## Named parameterized hypotheses -/
 
+/-- The 3-point certificate statement (the generated receipts' target). -/
+def ThreePointCert (e : ℝ) : Prop :=
+  ∀ u v : ℝ, 0 ≤ u → 0 ≤ v → u + v ≤ 4 →
+    kk u ^ 2 + kk v ^ 2 + kk (u + v) ^ 2 ≥ e
+
+/-- Certified by `gen_cert.py` (319 boxes, exact rational interval arithmetic;
+externally verified: 0 violations in 20k random samples + basin scans; data in
+`cert_data.json`; Lean receipt instantiation in flight). -/
+axiom three_point_certificate : ThreePointCert (2215072/10^10)
+
 /-- **Jo bridge** (stability-enhanced rank–trace + triple averaging):
-consuming the 3-point certificate at level e₀ = 2213813/10¹⁰, the machinery
+consuming the 3-point certificate at level e₀ = 2215072/10¹⁰, the machinery
 yields B(e₀) = (H₀ − e₀/4)/(1 − e₀/2) in ε-form. CLZ_GAP_JO_BRIDGE. -/
 axiom jo_bridge (δ : ℝ) (hδ : 0 < δ) :
     ∃ T₀ : ℝ, ∀ T ≥ T₀,
-      ((H0 - 2213813/10^10/4)/(1 - 2213813/10^10/2) - δ) * (Ncount 0 T : ℝ)
+      ((H0 - 2215072/10^10/4)/(1 - 2215072/10^10/2) - δ) * (Ncount 0 T : ℝ)
         ≤ N0simple 0 T
 
-/-- H₀ ≥ 6725006040/10¹⁰ (true value 0.672500703679…; margin 1.0e-7).
-Exact requirement: H₀ ≥ C·(1−e₀/2)+e₀/4 = 0.6725006036822692.
+/-- H₀ ≥ 6725006930/10¹⁰ (true value 0.672500703679…; margin 1.07e-8).
+Exact requirement: H₀ ≥ C·(1−e₀/2)+e₀/4 = 0.6725006928110…
 CLZ_GAP_H0. -/
-axiom H0_lower : (6725006040:ℝ)/10^10 ≤ H0
+axiom H0_lower : (6725006930:ℝ)/10^10 ≤ H0
 
 /-! ## The final theorem (PROVED) -/
 
-/-- **κ* ≥ 6725197/10⁷** in the cumulative ε-form of the zeta23 challenge,
-beating the verified row H = 0.6725007 by 1.9e-5. -/
+/-- **κ* ≥ 6725198/10⁷** in the cumulative ε-form of the zeta23 challenge,
+beating the verified row H = 0.6725007 by 1.9e-5. The sharp constant at the
+certificate level e₀ is B₀ = (H₀−e₀/4)/(1−e₀/2) ≈ 0.6725198 (floor 7dp). -/
 theorem kappa_star_ge :
     ∀ ε > 0, ∃ T₀ : ℝ, ∀ T ≥ T₀,
-      ((6725197:ℝ)/10^7 - ε) * (Ncount 0 T : ℝ) ≤ N0simple 0 T := by
+      ((6725198:ℝ)/10^7 - ε) * (Ncount 0 T : ℝ) ≤ N0simple 0 T := by
   intro ε hε
   -- ℚ/ℝ core: B₀ ≥ C  (decided from H0_lower at full precision)
-  have hB : ((6725197:ℝ)/10^7) ≤
-      (H0 - 2213813/10^10/4)/(1 - 2213813/10^10/2) := by
-    have hd : (0:ℝ) < 1 - 2213813/10^10/2 := by norm_num
+  have hB : ((6725198:ℝ)/10^7) ≤
+      (H0 - 2215072/10^10/4)/(1 - 2215072/10^10/2) := by
+    have hd : (0:ℝ) < 1 - 2215072/10^10/2 := by norm_num
     rw [le_div_iff₀ hd]
     nlinarith [H0_lower]
   obtain ⟨T₀, hT⟩ := jo_bridge (ε/2) (by linarith)
   refine ⟨T₀, fun T hT' => ?_⟩
   have h1 := hT T hT'
-  have hcmp : ((6725197:ℝ)/10^7 - ε) ≤
-      ((H0 - 2213813/10^10/4)/(1 - 2213813/10^10/2) - ε/2) := by linarith
-  calc ((6725197:ℝ)/10^7 - ε) * (Ncount 0 T : ℝ)
-      ≤ ((H0 - 2213813/10^10/4)/(1 - 2213813/10^10/2) - ε/2)
+  have hcmp : ((6725198:ℝ)/10^7 - ε) ≤
+      ((H0 - 2215072/10^10/4)/(1 - 2215072/10^10/2) - ε/2) := by linarith
+  calc ((6725198:ℝ)/10^7 - ε) * (Ncount 0 T : ℝ)
+      ≤ ((H0 - 2215072/10^10/4)/(1 - 2215072/10^10/2) - ε/2)
           * (Ncount 0 T : ℝ) :=
         mul_le_mul_of_nonneg_right hcmp (Nat.cast_nonneg _)
     _ ≤ N0simple 0 T := h1

@@ -184,6 +184,8 @@ def cover2(target, maxdepth=48):
     boxes = []
     sys.setrecursionlimit(100000)
     def rec(u0, u1, v0, v1, depth):
+        if u0 + v0 > 4:  # box disjoint from the closed triangle
+            return
         b = box_bound(u0, u1, v0, v1)
         if b >= target or depth >= maxdepth or (u1-u0) < RES_FLOOR or (v1-v0) < RES_FLOOR:
             boxes.append((u0, u1, v0, v1, b))
