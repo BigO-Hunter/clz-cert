@@ -70,8 +70,19 @@ theorem Kfn_zero : Kfn 0 = sinc a := by
 /-- The normalized kernel k(x) = K(x)/K(0). -/
 noncomputable def kk (x : ℝ) : ℝ := Kfn x / Kfn 0
 
+/-- Named gap: sin(1/√2) ∈ [sina_lo, sina_hi] (true 0.649636939080062444…,
+sandwich margin 1e-30; from the sin series partial sums + `alternating_tail`).
+Replaces the former anonymous `sorry` at `a_sin_ne` so the axiom footprint
+names the gap. -/
+axiom CLZ_GAP_SINPOS :
+    (0.649636939080062444129478616043121910899028818 : ℝ) ≤ sin a ∧
+    sin a ≤ (0.649636939080062444129478616045121910899028818 : ℝ)
+
 theorem a_sin_ne : sin a ≠ 0 := by
-  sorry -- CLZ_GAP_SINPOS: sin(1/√2) ≥ 0.64 from a series partial sum
+  have h := CLZ_GAP_SINPOS.1
+  intro hzero
+  rw [hzero] at h
+  norm_num at h
 
 theorem Kfn_zero_ne : Kfn 0 ≠ 0 := by
   rw [Kfn_zero, sinc, if_neg a_ne]
@@ -80,11 +91,16 @@ theorem Kfn_zero_ne : Kfn 0 ≠ 0 := by
 /-! ## Alternating-series tail (exact statement; named gap) -/
 
 /-- If b k is decreasing for k ≥ N and nonnegative, the alternating series tail
-after N is bounded by the first omitted term. -/
+after N is bounded by the first omitted term. (Named gap `CLZ_GAP_TAIL`;
+statement byte-identical to the former `sorry`.) -/
+axiom CLZ_GAP_TAIL (b : ℕ → ℝ) (N : ℕ) (hdec : ∀ k, N ≤ k → b (k+1) ≤ b k)
+    (hpos : ∀ k, 0 ≤ b k) :
+    |(∑' k, (-1 : ℝ)^k * b k) - (∑ k ∈ Finset.range N, (-1 : ℝ)^k * b k)| ≤ b N
+
 theorem alternating_tail (b : ℕ → ℝ) (N : ℕ) (hdec : ∀ k, N ≤ k → b (k+1) ≤ b k)
     (hpos : ∀ k, 0 ≤ b k) :
-    |(∑' k, (-1 : ℝ)^k * b k) - (∑ k ∈ Finset.range N, (-1 : ℝ)^k * b k)| ≤ b N := by
-  sorry -- CLZ_GAP_TAIL: standard alternating-series estimate
+    |(∑' k, (-1 : ℝ)^k * b k) - (∑ k ∈ Finset.range N, (-1 : ℝ)^k * b k)| ≤ b N :=
+  CLZ_GAP_TAIL b N hdec hpos
 
 /-! ## The generic sinc bracket (consumer contract, exact statement) -/
 
