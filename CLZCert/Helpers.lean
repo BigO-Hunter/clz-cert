@@ -1,8 +1,8 @@
 import Mathlib
-import CLZCert.Kernel
+import CLZCert.Gaps
 
 /-!
-# CLZ receipts helpers (PROVED — adds no new gaps)
+# CLZ receipts helpers (PROVED — consumes the proved Gaps lemmas, adds no new gaps)
 
 Shared machinery for the generated per-box receipts (`CLZCert.Cert.*`):
 
@@ -13,11 +13,12 @@ Shared machinery for the generated per-box receipts (`CLZCert.Cert.*`):
 - `sinc_even`, `sinc_bracket_even_cover`, `sinc_small`: reflection to
   nonnegative arguments; `sinc ∈ [0,1]` on `[0,M]`, `M < π` covers reflected
   windows near zero (including `t = 0`) with ample slack.
-- `sin_series_sandwich`: the 10-term alternating sandwich; the only gap it
-  touches is `Kernel.alternating_tail` (`CLZ_GAP_TAIL`), instantiated with
-  `c k = x^(2k)/(2k+1)!` at `N = 10` and the global tail constant `chiG`.
+- `sin_series_sandwich`: the 10-term alternating sandwich, consuming
+  `Kernel.sin_partial_abs_bound` (PROVED in CLZCert.Gaps) at `n = 9` with the
+  global tail constant `chiG = (π_hi/2)^21/21! ≈ 2.6e-16`.
 - `Kfn0_lb` / `Kfn0_ub`: numeric `Kfn 0 = sinc(1/√2)` interval from
-  `CLZ_GAP_SINPOS`.
+  `CLZ.sin_a_lb` and the mirrored `sin_a_ub` (both via
+  `Kernel.sin_partial_abs_bound`).
 
 The generated receipts consume these with frozen ℚ literals only.
 -/
@@ -25,6 +26,7 @@ The generated receipts consume these with frozen ℚ literals only.
 namespace CLZ.Cert
 
 open Real
+open scoped Nat
 
 /-! ## sin reduction by natural multiples of π -/
 
@@ -115,127 +117,123 @@ theorem sin_series_sandwich (x : ℝ) (habs : |x| ≤ (3.14159265358979323847:�
   have hx2 : x^2 ≤ 6 := by
     have h6 : x^2 = |x|^2 := (sq_abs x).symm
     linarith
-  have hx20 : x^20 = |x|^20 := by
-    have e1 : x^20 = (x^2)^10 := by
-      show x^(2*10) = (x^2)^10
-      rw [pow_mul]
-    have e2 : |x|^20 = (|x|^2)^10 := by
-      show |x|^(2*10) = (|x|^2)^10
-      rw [pow_mul]
-    rw [e1, e2, sq_abs]
-  have hx21 : |x| * x^20 = |x|^21 := by
-    rw [hx20, show |x|^21 = |x|^20 * |x| from by
-      rw [show ((21:ℕ)) = 20+1 from rfl, pow_succ], mul_comm]
-  set c : ℕ → ℝ := fun k => x^(2*k) / ((2*k+1).factorial : ℝ) with hcdef
-  have hx0 : ∀ k, 0 ≤ x^(2*k) := fun k => by
-    rw [pow_mul]
-    exact pow_nonneg (sq_nonneg x) k
-  have hcpos : ∀ k, 0 ≤ c k := fun k => by
-    unfold c
-    exact div_nonneg (hx0 k) (by positivity)
-  have hdec : ∀ k, 10 ≤ k → c (k+1) ≤ c k := by
-    intro k hk
-    have hN1 : (6:ℝ) ≤ ((2*k+2 : ℕ) : ℝ) :=
-      Nat.cast_le.mpr (show (6:ℕ) ≤ 2*k+2 by omega)
-    have hratio : x^2 ≤ ((2*k+2 : ℕ) : ℝ) := le_trans hx2 hN1
-    have hpos1 : (0:ℝ) < ((2*k+1).factorial : ℝ) :=
-      Nat.cast_pos.mpr (Nat.factorial_pos _)
-    have key : x^(2*k) * x^2 ≤ x^(2*k) * ((2*k+2 : ℕ) : ℝ) :=
-      mul_le_mul_of_nonneg_left hratio (hx0 k)
-    have f_a : x^(2*k+1+1) * ((2*k+1).factorial : ℝ)
-        = x^(2*k) * (x^2 * ((2*k+1).factorial : ℝ)) := by
-      rw [show x^(2*k+1+1) = x^(2*k) * x^2 from by
-        rw [show (2*k+1+1 : ℕ) = (2*k)+2 from rfl, pow_succ, pow_succ]; ring]
-      ring
-    have hB : x^(2*k) * x^2 * ((2*k+1).factorial : ℝ)
-        ≤ x^(2*k) * ((2*k+2 : ℕ) : ℝ) * ((2*k+1).factorial : ℝ) :=
-      mul_le_mul_of_nonneg_right key (Nat.cast_nonneg (2*k+1).factorial)
-    have h2c : x^(2*k) * (((2*k+2 : ℕ) : ℝ) * ((2*k+1).factorial : ℝ))
-        ≤ x^(2*k) * (((2*k+3 : ℕ) : ℝ) * ((2*k+1).factorial : ℝ)) := by
-      have hle : ((2*k+2 : ℕ) : ℝ) ≤ ((2*k+3 : ℕ) : ℝ) :=
-        Nat.cast_le.mpr (show 2*k+2 ≤ 2*k+3 by omega)
-      exact mul_le_mul_of_nonneg_left
-        (mul_le_mul_of_nonneg_right hle (Nat.cast_nonneg (2*k+1).factorial)) (hx0 k)
-    have h3c : x^(2*k) * (((2*k+3 : ℕ) : ℝ) * ((2*k+1).factorial : ℝ))
-        ≤ x^(2*k) * (((2*k+3 : ℕ) : ℝ)
-            * (((2*k+2 : ℕ) : ℝ) * ((2*k+1).factorial : ℝ))) := by
-      have hE1 : (1:ℝ) ≤ ((2*k+2 : ℕ) : ℝ) :=
-        le_trans (by norm_num : (1:ℝ) ≤ 2) (Nat.cast_le.mpr (show 2 ≤ 2*k+2 by omega))
-      have hB0 : (0:ℝ) ≤ ((2*k+1).factorial : ℝ) := Nat.cast_nonneg (2*k+1).factorial
-      exact mul_le_mul_of_nonneg_left
-        (mul_le_mul_of_nonneg_left (le_mul_of_one_le_left hB0 hE1)
-          (Nat.cast_nonneg (2*k+3))) (hx0 k)
-    have hbig : (0:ℝ) < ((2*k+2+1 : ℕ) : ℝ)
-        * (((2*k+1+1 : ℕ) : ℝ) * ((2*k+1).factorial : ℝ)) := by
-      positivity
-    have hgoal : c (k+1) ≤ c k := by
-      unfold c
-      rw [show (2*(k+1) : ℕ) = (2*k+2) from rfl, Nat.factorial_succ,
-        Nat.factorial_succ, Nat.cast_mul, Nat.cast_mul,
-        div_le_div_iff₀ hbig hpos1]
-      linarith [f_a, hB, h2c, h3c]
-    exact hgoal
-  have h1 := alternating_tail c 10 hdec hcpos
-  simp only [hcdef] at h1
-  have hsplit : sin x
-      = x * ∑' k, (-1:ℝ)^k * (x^(2*k) / ((2*k+1).factorial : ℝ)) := by
-    rw [Real.sin_eq_tsum x, ← tsum_mul_left]
-    exact tsum_congr fun k => by simp only [pow_succ]; ring
-  have hfin : x * (∑ k ∈ Finset.range 10,
-      (-1:ℝ)^k * (x^(2*k) / ((2*k+1).factorial : ℝ))) = sin9 x := by
-    simp only [Finset.mul_sum, Finset.sum_range_succ, sin9]
+  have hmono : ∀ k : ℕ, x^2 ≤ (2*k+2)*(2*k+3) := fun k =>
+    le_trans hx2 (by
+      have hk0 : (0:ℝ) ≤ (k:ℝ) := Nat.cast_nonneg _
+      nlinarith)
+  have hchi : |x|^21 / ((21).factorial : ℝ) ≤ chiG := by
+    unfold chiG
+    exact div_le_div_of_nonneg_right
+      (pow_le_pow_left₀ (abs_nonneg x) habs 21) (by positivity)
+  have hsum : (∑ k ∈ Finset.range 10, (-1:ℝ)^k * x^(2*k+1) / ((2*k+1).factorial : ℝ))
+      = sin9 x := by
+    simp only [Finset.sum_range_succ, sin9]
     norm_num
     ring
-  have hchi : |x| * c 10 ≤ chiG := by
-    unfold chiG c
-    calc |x| * (x^(2*10) / ((2*10+1).factorial : ℝ))
-        = |x|^21 / ((21).factorial : ℝ) := by
-          rw [← mul_div_assoc, show ((2*10 : ℕ)) = 20 from rfl, hx21]
-      _ ≤ ((3.14159265358979323847:ℝ)/2)^21 / ((21).factorial : ℝ) :=
-          div_le_div_of_nonneg_right
-            (pow_le_pow_left₀ (abs_nonneg x) habs 21) (by positivity)
-  have hcomb : |sin x - sin9 x| ≤ chiG := by
-    have h2 : |x * (∑' k, (-1:ℝ)^k * (x^(2*k) / ((2*k+1).factorial : ℝ)))
-        - x * (∑ k ∈ Finset.range 10, (-1:ℝ)^k * (x^(2*k) / ((2*k+1).factorial : ℝ)))|
-        ≤ |x| * c 10 := by
-      rw [← mul_sub, abs_mul]
-      exact mul_le_mul_of_nonneg_left h1 (abs_nonneg x)
-    rw [← hsplit] at h2
-    rw [hfin] at h2
-    linarith [h2, hchi]
-  obtain ⟨hlo, hhi⟩ := abs_le.mp hcomb
-  exact ⟨by linarith, by linarith⟩
+  have hodd : (∑ k ∈ Finset.range 10, (-1:ℝ)^k * (-x)^(2*k+1) / ((2*k+1).factorial : ℝ))
+      = -(∑ k ∈ Finset.range 10, (-1:ℝ)^k * x^(2*k+1) / ((2*k+1).factorial : ℝ)) := by
+    rw [← Finset.sum_neg_distrib]
+    refine Finset.sum_congr rfl fun k _ => ?_
+    rw [show (-x)^(2*k+1) = -(x^(2*k+1)) from by
+      rw [show (-x)^(2*k+1) = (-x) * (-x)^(2*k) from by
+        rw [show (2*k+1 : ℕ) = (2*k)+1 from rfl, pow_succ]; ring]
+      rw [show (-x)^(2*k) = x^(2*k) from by rw [pow_mul, neg_sq, pow_mul]]
+      ring]
+    ring
+  rcases le_or_gt 0 x with hx0 | hx0
+  · -- x ≥ 0: direct partial-sum enclosure
+    have hb := sin_partial_abs_bound x hx0 9 hmono
+    rw [show (9+1 : ℕ) = 10 from rfl] at hb
+    have h21 : x^21 = |x|^21 := by rw [abs_of_nonneg hx0]
+    have htail : x^21 / ((21).factorial : ℝ) ≤ chiG := by
+      rw [h21]; exact hchi
+    rw [hsum] at hb
+    obtain ⟨hlo, hhi⟩ := abs_le.mp hb
+    exact ⟨by linarith, by linarith⟩
+  · -- x < 0: apply the enclosure at −x (odd series)
+    have hnx : 0 ≤ -x := by linarith
+    have hb := sin_partial_abs_bound (-x) hnx 9 (fun k => by
+      rw [show (-x)^2 = x^2 from by ring]; exact hmono k)
+    rw [show (9+1 : ℕ) = 10 from rfl, show (2*9+3 : ℕ) = 21 from rfl] at hb
+    have h21 : (-x)^21 = |x|^21 := by rw [abs_of_nonpos (le_of_lt hx0)]
+    have htail : (-x)^21 / ((21).factorial : ℝ) ≤ chiG := by
+      rw [h21]; exact hchi
+    rw [hodd, Real.sin_neg, hsum] at hb
+    have hkey : (-sin x - -sin9 x) = -(sin x - sin9 x) := by ring
+    rw [hkey, abs_neg] at hb
+    obtain ⟨hlo, hhi⟩ := abs_le.mp hb
+    exact ⟨by linarith, by linarith⟩
 
-/-! ## Kfn 0 numeric interval (consumes CLZ_GAP_SINPOS) -/
+/-! ## Kfn 0 numeric interval (from the proved sin partial-sum enclosures) -/
 
-/-- Lower bound `Kfn 0 = sinc(1/√2) = sin(1/√2)/(1/√2) ≥ 0.918725369865…`. -/
-theorem Kfn0_lb : (0.918725369865568437655401194933773706703841370 : ℝ) ≤ Kfn 0 := by
-  have hsa := CLZ_GAP_SINPOS.1
-  have haub := a_ub
+/-- The proved upper enclosure for `sin a` (mirror of `CLZ.sin_a_lb`, same
+partial-sum interface, `n = 5`, tail `xh^13/13!` on the positive side). -/
+theorem sin_a_ub :
+    sin a ≤ xh - xl^3/6 + xh^5/120 - xl^7/5040 + xh^9/362880 - xl^11/39916800
+      + xh^13/6227020800 := by
+  have hmono : ∀ k : ℕ, a^2 ≤ (2*k+2)*(2*k+3) := by
+    intro k
+    rw [a_sq]
+    have hk : ((2*k+2)*(2*k+3) : ℝ) ≥ 6 := by
+      have hk0 : (0:ℝ) ≤ (k:ℝ) := Nat.cast_nonneg _
+      nlinarith
+    linarith
+  have hb := sin_partial_abs_bound a (le_of_lt (a_pos)) 5 hmono
+  obtain ⟨-, hhi⟩ := abs_le.1 hb
+  have hP5 : (∑ k ∈ Finset.range 6, (-1:ℝ)^k * a^(2*k+1)/((2*k+1)! : ℝ))
+      = a - a^3/6 + a^5/120 - a^7/5040 + a^9/362880 - a^11/39916800 := by
+    norm_num [Finset.sum_range_succ]; ring
+  rw [hP5] at hhi
+  rw [show (2*5+3 : ℕ) = 13 from rfl, show ((13 : ℕ)! : ℝ) = 6227020800 from by norm_num] at hhi
+  have d6 : 0 < (6:ℝ) := by norm_num
+  have d120 : 0 < (120:ℝ) := by norm_num
+  have d5040 : 0 < (5040:ℝ) := by norm_num
+  have d362880 : 0 < (362880:ℝ) := by norm_num
+  have d39916800 : 0 < (39916800:ℝ) := by norm_num
+  have d6227020800 : 0 < (6227020800:ℝ) := by norm_num
+  have e1 : a ≤ xh := a_le_xh
+  have e3 : xl^3/6 ≤ a^3/6 :=
+    div_le_div₀ (pow_nonneg (le_of_lt a_pos) 3) (pow_le_pow_left₀ (le_of_lt xl_pos) xl_le_a 3) d6 (le_refl 6)
+  have e5 : a^5/120 ≤ xh^5/120 :=
+    div_le_div₀ (pow_nonneg (le_of_lt xh_pos) 5) (pow_le_pow_left₀ (le_of_lt a_pos) a_le_xh 5) d120 (le_refl 120)
+  have e7 : xl^7/5040 ≤ a^7/5040 :=
+    div_le_div₀ (pow_nonneg (le_of_lt a_pos) 7) (pow_le_pow_left₀ (le_of_lt xl_pos) xl_le_a 7) d5040 (le_refl 5040)
+  have e9 : a^9/362880 ≤ xh^9/362880 :=
+    div_le_div₀ (pow_nonneg (le_of_lt xh_pos) 9) (pow_le_pow_left₀ (le_of_lt a_pos) a_le_xh 9) d362880 (le_refl 362880)
+  have e11 : xl^11/39916800 ≤ a^11/39916800 :=
+    div_le_div₀ (pow_nonneg (le_of_lt a_pos) 11) (pow_le_pow_left₀ (le_of_lt xl_pos) xl_le_a 11) d39916800 (le_refl 39916800)
+  have e13 : a^13/6227020800 ≤ xh^13/6227020800 :=
+    div_le_div₀ (pow_nonneg (le_of_lt xh_pos) 13) (pow_le_pow_left₀ (le_of_lt a_pos) a_le_xh 13) d6227020800 (le_refl 6227020800)
+  linarith
+
+/-- Lower bound `Kfn 0 ≥ 0.9187253698520…` (interval width ~6e-11,
+against the 20-digit `a`-bounds; slack budget is 2.6e-4 — ample). -/
+theorem Kfn0_lb : (0.918725369860555949800554150691128408603149501 : ℝ) ≤ Kfn 0 := by
   have hapos : (0:ℝ) < a := by
     show (0:ℝ) < 1 / sqrt 2
     positivity
   have h1 : Kfn 0 = sin a / a := by simp [Kfn_zero, Real.sinc, a_ne]
   rw [h1, le_div_iff₀ hapos]
-  calc (0.918725369865568437655401194933773706703841370:ℝ) * a
-      ≤ (0.918725369865568437655401194933773706703841370:ℝ) * (0.7071067811865475245:ℝ) :=
-        mul_le_mul_of_nonneg_left haub (by norm_num)
-    _ ≤ 0.649636939080062444129478616043121910899028818 := by norm_num
-    _ ≤ sin a := hsa
+  calc (0.918725369860555949800554150691128408603149501:ℝ) * a
+      ≤ (0.918725369860555949800554150691128408603149501:ℝ) * (0.7071067811865475245:ℝ) :=
+        mul_le_mul_of_nonneg_left a_ub (by norm_num)
+    _ ≤ xl - xh^3/6 + xl^5/120 - xh^7/5040 + xl^9/362880 - xh^11/39916800
+        - xh^13/6227020800 := by simp only [xl, xh]; norm_num
+    _ ≤ sin a := sin_a_lb
 
-/-- Upper bound `Kfn 0 ≤ 0.918725369865568437785328582752614622636419071`. -/
-theorem Kfn0_ub : Kfn 0 ≤ (0.918725369865568437785328582752614622636419071 : ℝ) := by
-  have hsa := CLZ_GAP_SINPOS.2
-  have ha := a_lb
+/-- Upper bound `Kfn 0 ≤ 0.9187253698655744013…`. -/
+theorem Kfn0_ub : Kfn 0 ≤ (0.918725369865574401307762900255801616701254273 : ℝ) := by
   have hapos : (0:ℝ) < a := by
     show (0:ℝ) < 1 / sqrt 2
     positivity
   have h1 : Kfn 0 = sin a / a := by simp [Kfn_zero, Real.sinc, a_ne]
   rw [h1, div_le_iff₀ hapos]
   calc sin a
-      ≤ 0.649636939080062444129478616045121910899028818 := hsa
-    _ ≤ (0.918725369865568437785328582752614622636419071:ℝ) * (0.7071067811865475244:ℝ) := by norm_num
-    _ ≤ (0.918725369865568437785328582752614622636419071:ℝ) * a :=
-        mul_le_mul_of_nonneg_left ha (by norm_num)
+      ≤ xh - xl^3/6 + xh^5/120 - xl^7/5040 + xh^9/362880 - xl^11/39916800
+        + xh^13/6227020800 := sin_a_ub
+    _ ≤ (0.918725369865574401307762900255801616701254273:ℝ) * (0.7071067811865475244:ℝ) := by
+        simp only [xl, xh]; norm_num
+    _ ≤ (0.918725369865574401307762900255801616701254273:ℝ) * a :=
+        mul_le_mul_of_nonneg_left a_lb (by norm_num)
 
 end CLZ.Cert

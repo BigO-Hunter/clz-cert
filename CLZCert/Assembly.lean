@@ -1,4 +1,4 @@
-import CLZCert.Kernel
+import CLZCert.Gaps
 
 /-!
 # CLZ assembly: κ* ≥ 6725197/10⁷ — conditional on two NAMED hypotheses
@@ -77,8 +77,11 @@ axiom jo_bridge (δ : ℝ) (hδ : 0 < δ) :
 
 /-- H₀ ≥ 6725006930/10¹⁰ (true value 0.672500703679…; margin 1.07e-8).
 Exact requirement: H₀ ≥ C·(1−e₀/2)+e₀/4 = 0.6725006928110…
-CLZ_GAP_H0. -/
-axiom H0_lower : (6725006930:ℝ)/10^10 ≤ H0
+CLZ_GAP_H0 PROVED in CLZ.Gaps (tan-sandwich: alternating sin/cos partial-sum
+enclosures on [xl, xh] around 1/√2, exact-ℚ close; axioms: stdlib only). -/
+theorem H0_lower : (6725006930:ℝ)/10^10 ≤ H0 := by
+  unfold H0 cMT
+  exact CLZ.H0_tan_sandwich
 
 /-! ## The final theorem (PROVED) -/
 
