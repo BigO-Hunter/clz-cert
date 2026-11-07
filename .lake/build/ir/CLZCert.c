@@ -1,6 +1,6 @@
 // Lean compiler output
 // Module: CLZCert
-// Imports: public import Init public meta import Init public import CLZCert.Smoke
+// Imports: public import Init public meta import Init public import CLZCert.Kernel public import CLZCert.Assembly public import CLZCert.Stability
 #include <lean/lean.h>
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunused-parameter"
@@ -15,7 +15,9 @@ extern "C" {
 #endif
 lean_object* initialize_Init(uint8_t builtin);
 lean_object* initialize_Init(uint8_t builtin);
-lean_object* initialize_clz_x2dcert_CLZCert_Smoke(uint8_t builtin);
+lean_object* initialize_clz_x2dcert_CLZCert_Kernel(uint8_t builtin);
+lean_object* initialize_clz_x2dcert_CLZCert_Assembly(uint8_t builtin);
+lean_object* initialize_clz_x2dcert_CLZCert_Stability(uint8_t builtin);
 void lean_initialize();
 static bool _G_initialized = false;
 LEAN_EXPORT lean_object* initialize_clz_x2dcert_CLZCert(uint8_t builtin) {
@@ -29,7 +31,13 @@ lean_dec_ref(res);
 res = initialize_Init(builtin);
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
-res = initialize_clz_x2dcert_CLZCert_Smoke(builtin);
+res = initialize_clz_x2dcert_CLZCert_Kernel(builtin);
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = initialize_clz_x2dcert_CLZCert_Assembly(builtin);
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = initialize_clz_x2dcert_CLZCert_Stability(builtin);
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
 return lean_io_result_mk_ok(lean_box(0));

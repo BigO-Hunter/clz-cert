@@ -51508,8 +51508,12 @@
     "/Users/dmitri.arkhipov/bigo-campaign/staircase-port/.lake/packages/importGraph/.lake/build/lib/lean/ImportGraph/Graph/TransitiveClosure.olean.private"],
    ["/Users/dmitri.arkhipov/bigo-campaign/staircase-port/.lake/packages/importGraph/.lake/build/lib/lean/ImportGraph/Graph/TransitiveClosure.ir.sig",
     "/Users/dmitri.arkhipov/bigo-campaign/staircase-port/.lake/packages/importGraph/.lake/build/lib/lean/ImportGraph/Graph/TransitiveClosure.ir"]],
-  "CLZCert.Smoke":
-  [["/Users/dmitri.arkhipov/bigo-campaign/clz-cert/.lake/build/lib/lean/CLZCert/Smoke.olean"]],
+  "CLZCert.Stability":
+  [["/Users/dmitri.arkhipov/bigo-campaign/clz-cert/.lake/build/lib/lean/CLZCert/Stability.olean"]],
+  "CLZCert.Kernel":
+  [["/Users/dmitri.arkhipov/bigo-campaign/clz-cert/.lake/build/lib/lean/CLZCert/Kernel.olean"]],
+  "CLZCert.Assembly":
+  [["/Users/dmitri.arkhipov/bigo-campaign/clz-cert/.lake/build/lib/lean/CLZCert/Assembly.olean"]],
   "Batteries.Util.ProofWanted":
   [["/Users/dmitri.arkhipov/bigo-campaign/staircase-port/.lake/packages/batteries/.lake/build/lib/lean/Batteries/Util/ProofWanted.olean",
     "/Users/dmitri.arkhipov/bigo-campaign/staircase-port/.lake/packages/batteries/.lake/build/lib/lean/Batteries/Util/ProofWanted.olean.server",
