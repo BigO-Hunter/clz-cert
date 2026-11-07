@@ -280,4 +280,49 @@ theorem sinc_near1 (δ t : ℝ) (hnn : 0 ≤ t) (hδt : t ≤ δ) (hδ1 : δ ≤
       _ ≤ sinc t := hlo1
     · exact hup2
 
+/-! ## Per-window-tail variants (the receipt workhorse) -/
+
+theorem sin9_sum_eq (x : ℝ) :
+    (∑ k ∈ Finset.range 10, (-1:ℝ)^k * x^(2*k+1) / ((2*k+1).factorial : ℝ)) = sin9 x := by
+  simp only [Finset.sum_range_succ, sin9]
+  norm_num
+  ring
+
+theorem sin9_sum_eq_neg (x : ℝ) :
+    (∑ k ∈ Finset.range 10, (-1:ℝ)^k * (-x)^(2*k+1) / ((2*k+1).factorial : ℝ))
+      = -(∑ k ∈ Finset.range 10, (-1:ℝ)^k * x^(2*k+1) / ((2*k+1).factorial : ℝ)) := by
+  rw [← Finset.sum_neg_distrib]
+  exact Finset.sum_congr rfl fun k _ => by
+    rw [show (-x)^(2*k+1) = -(x^(2*k+1)) from by
+      rw [show (-x)^(2*k+1) = (-x) * (-x)^(2*k) from by
+        rw [show (2*k+1 : ℕ) = (2*k)+1 from rfl, pow_succ]; ring]
+      rw [show (-x)^(2*k) = x^(2*k) from by rw [pow_mul, neg_sq, pow_mul]]
+      ring]
+    ring
+
+theorem sin_series_sandwich_pos (x : ℝ) (hx0 : 0 ≤ x)
+    (hmono : ∀ k : ℕ, x^2 ≤ (2*k+2)*(2*k+3)) (χ : ℝ)
+    (hχ : x^21/((21).factorial : ℝ) ≤ χ) :
+    sin9 x - χ ≤ sin x ∧ sin x ≤ sin9 x + χ := by
+  have hb := sin_partial_abs_bound x hx0 9 hmono
+  rw [show (9+1 : ℕ) = 10 from rfl, show (2*9+3 : ℕ) = 21 from rfl,
+    show ((21 : ℕ)! : ℝ) = 51090942171709440000 from by norm_num, sin9_sum_eq] at hb
+  obtain ⟨hlo, hhi⟩ := abs_le.mp hb
+  exact ⟨by linarith, by linarith⟩
+
+theorem sin_series_sandwich_neg (x : ℝ) (hx0 : x ≤ 0)
+    (hmono : ∀ k : ℕ, x^2 ≤ (2*k+2)*(2*k+3)) (χ : ℝ)
+    (hχ : (-x)^21/((21).factorial : ℝ) ≤ χ) :
+    sin9 x - χ ≤ sin x ∧ sin x ≤ sin9 x + χ := by
+  have hnx : 0 ≤ -x := by linarith
+  have hb := sin_partial_abs_bound (-x) hnx 9 (fun k => by
+    rw [show (-x)^2 = x^2 from by ring]; exact hmono k)
+  rw [show (9+1 : ℕ) = 10 from rfl, show (2*9+3 : ℕ) = 21 from rfl,
+    show ((21 : ℕ)! : ℝ) = 51090942171709440000 from by norm_num,
+    sin9_sum_eq_neg, Real.sin_neg, sin9_sum_eq] at hb
+  have hkey : (-sin x - -sin9 x) = -(sin x - sin9 x) := by ring
+  rw [hkey, abs_neg] at hb
+  obtain ⟨hlo, hhi⟩ := abs_le.mp hb
+  exact ⟨by linarith, by linarith⟩
+
 end CLZ.Cert
