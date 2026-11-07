@@ -141,26 +141,20 @@ def k2_lower(x0, x1):
     t2hi = shi(x1 * PHI) + AHI
     reflected = t1lo < 0
     if reflected:
-        # |t1| <= M: bracket [0,M] = [0,d] near1 U fine [d,M] sandwich pieces
+        # |t1| <= M: reflected cells have |t1| <= a < 1, so sinc is covered
+        # by the near-1 bracket on [0,M] in one shot. (The earlier far-piece
+        # split bracketed P/t as an INDEPENDENT product, losing the t = pi*s
+        # coupling: at cell 900 it gave sinc in [0.5,2.0] instead of ~1 --
+        # sound but 0.43-wide; the near-1 bracket is tight. Task-0 note: the
+        # sibling's wt[900]=7.58e74 is garbage-HIGH (S_reduce straddle bug),
+        # the pre-fix mirror here was garbage-LOW (0.42 vs true ~0.854);
+        # true w(cell 900) ~= 0.854.)
         M = max(-t1lo, t1hi, F(0))
-        d = M / 2
-        near_lo = 1 - d ** 2 / 6 - d ** 4 / 120
+        assert M <= 1, f"reflected cell wider than 1: {float(M)}"
+        near_lo = 1 - M ** 2 / 6 - M ** 4 / 120
         lo1 = near_lo; hi1 = F(1)
-        npieces = max(1, math.ceil(float(M - d) / 0.005))
-        h = (M - d) / npieces
-        far = []
-        for k in range(npieces):
-            a = d + k * h; b = d + (k + 1) * h
-            flo, fhi, P1, Q1 = sinc_bracket_piece(0, slo(a / PHI), shi(b / PLO), slo(a), shi(b))
-            far.append((a, b, flo, fhi))
-            lo1 = min(lo1, flo); hi1 = max(hi1, fhi)
-        # hair piece at the right edge: [M - 1e-40, M] -- tight endpoint bound
-        ha = M - F(1, 10 ** 40)
-        hlo, hhi2, _, _ = sinc_bracket_piece(0, slo(ha / PHI), shi(M / PLO), slo(ha), shi(M))
-        far.append((ha, M, hlo, hhi2))
-        lo1 = min(lo1, hlo); hi1 = max(hi1, hhi2)
         K1 = (lo1, hi1)
-        br1 = ("reflected", d, M, far)
+        br1 = ("reflected", M)
     else:
         lo1, hi1 = sinc_interval(t1lo, t1hi)
         br1 = ("direct",)
