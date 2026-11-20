@@ -1,0 +1,10 @@
+.lake/
+*.pkl
+tables.log
+search.log
+compact.log
+verify.log
+pipeline.log
+build7.log
+run_all.sh
+build7.sh

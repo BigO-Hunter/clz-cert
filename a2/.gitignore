@@ -1,0 +1,11 @@
+.zlake
+.lake/packages
+refine_min.py
+__pycache__/
+*.olean
+*.ilean
+*.trace
+*.hash
+zeta-simple-zeros/
+CLZCert/Cert/BoxCheck_*.lean
+CLZCert/Cert/Slim_0*.lean
