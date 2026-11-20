@@ -1,7 +1,7 @@
 #!/bin/bash
 # Emit + kernel-check the box arithmetic for all interval boxes, batch by batch.
 # Ledger-driven (boxcheck_ledger.txt: one "ok <lo> <hi> <secs>" line per batch).
-cd "$HOME/bigo-campaign/clz-cert" || exit 1
+cd "$(dirname "$0")" || exit 1
 export LAKE_JOBS=1 LEAN_NUM_THREADS=1
 LED=CLZCert/Cert/boxcheck_ledger.txt
 touch "$LED"

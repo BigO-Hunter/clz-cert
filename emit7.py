@@ -8,13 +8,14 @@ Mirror discipline: every real literal is derived OUTWARD from the Lean-visible
 20-digit constants on the 1e-45 grid; each cell claim is verified in exact
 arithmetic before emission -- a failed gate STOPS that stage.
 """
+import os
 import json, math, os, sys, time
 from fractions import Fraction as F
 
 sys.path.insert(0, ".")
 import gen_receipts_7pt as g
 
-SIB = "/Users/dmitri.arkhipov/bigo-campaign/clz-cert-7pt"
+SIB = os.environ.get("CLZ_CERT_7PT", os.path.join(os.path.dirname(__file__), "clz-cert-7pt"))
 CERT = "CLZCert/Cert"
 GN = g.GN
 G45 = g.G45

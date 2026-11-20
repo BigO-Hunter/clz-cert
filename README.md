@@ -17,3 +17,9 @@ Open work: land the corrected cert_data.json; extend to the 7-point lane; rerun 
 ## License
 
 Licensed under the Copy-Free/Stays-Free (CFSF) License — see [LICENSE](LICENSE). CFSF: copy-free (use for any purpose) and stays-free (nobody may fence this work). The name is unclaimed in software licensing (checked 2026-11-09) and is deliberately not "Copyfree" — the Copyfree Initiative's certification mark — since CFSF's anti-enclosure condition is excluded by their standard.  Vendored third-party material keeps its upstream license — see [NOTICE](NOTICE.md).
+
+## Umbrella layout and optional seven-point data
+
+The repository root remains the corrected three-point certificate apparatus. `frontier/` contains the complete original `clz-frontier` repository at source commit `5b7f276b5b41893b989cb4128faa79dd2f902285`, merged with full history: the true κ* frontier table and the WAIT verdict that prevents filing below the live bar.
+
+The optional seven-point dataset is approximately 1.9 GB and is not vendored. Scripts that regenerate or audit it accept `CLZ_CERT_7PT=/path/to/clz-cert-7pt`; the three-point certificate and `frontier/` material do not require that dataset.

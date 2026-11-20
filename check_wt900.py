@@ -18,6 +18,7 @@ because every sum-range in their box cover is >= 120 cells wide, so a
 garbage-HIGH cell can never be the min of a range -- it WOULD be unsound for
 a single-cell range, hence worth fixing on their side.
 """
+import os
 import json
 import pickle
 import sys
@@ -44,7 +45,7 @@ def wfun(x):
 
 def main():
     cells = [898, 899, 900, 901, 902]
-    sib = pickle.load(open("/Users/dmitri.arkhipov/bigo-campaign/clz-cert-7pt/tables_7pt.pkl", "rb"))["wt"]
+    sib = pickle.load(open(os.path.join(os.environ.get("CLZ_CERT_7PT", os.path.join(os.path.dirname(__file__), "clz-cert-7pt")), "/tables_7pt.pkl"), "rb"))["wt"]
     mine = json.load(open("mirror_wt.json"))
     print(f"{'cell':>5} {'sibling wt':>24} {'my mirror':>22} {'true w (min over cell)':>26}")
     bad = 0
