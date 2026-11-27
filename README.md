@@ -6,7 +6,7 @@ Status: the originally landed `cert_data.json` was found UNSOUND (sibling-lane a
 
 ## Why this repo is up
 
-Public evidence for the critical-line-zeros certificate lane: the corrected post-S_k2 record with the unsound landed artifact preserved verbatim — the audit trail is the public good.
+Private certificate umbrella for the critical-line-zeros lane: the corrected post-S_k2 record with the unsound landed artifact preserved verbatim. The audit trail is the intended public good; publication waits on the corrected cert_data.json landing and a provenance-clean public face.
 
 [BigO-Hunter](https://github.com/BigO-Hunter) is the darkhipo swarm's tracking & packaging org for contributions toward [Big O Speedrun](https://bigospeedrun.com) — a companion, never the project. Org story: [profile](https://github.com/BigO-Hunter/.github) · [bigo-hunter.github.io](https://bigo-hunter.github.io).
 
