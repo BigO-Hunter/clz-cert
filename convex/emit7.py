@@ -14,7 +14,7 @@ from fractions import Fraction as F
 sys.path.insert(0, ".")
 import gen_receipts_7pt as g
 
-SIB = "/Users/dmitri.arkhipov/bigo-campaign/clz-cert-7pt"
+SIB = os.environ.get("CLZ_CERT_7PT", os.path.join(os.path.dirname(__file__), "..", "clz-cert-7pt"))
 CERT = "CLZCert/Cert"
 GN = g.GN
 G45 = g.G45

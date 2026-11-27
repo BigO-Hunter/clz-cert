@@ -6,6 +6,7 @@ Outputs (committed artifacts):
   mirror_log.json  -- validation record: >=0 gate, sibling diff, one-body
                       gates, mpmath soundness sweep (20 pts/cell)
 """
+import os
 import json, math, pickle, sys, time
 from fractions import Fraction as F
 
@@ -15,7 +16,7 @@ import gen_receipts_7pt as g
 import mpmath
 mpmath.mp.dps = 50
 
-SIB = "/Users/dmitri.arkhipov/bigo-campaign/clz-cert-7pt"
+SIB = os.environ.get("CLZ_CERT_7PT", os.path.join(os.path.dirname(__file__), "..", "clz-cert-7pt"))
 G = 10 ** 45
 
 def w_true(x):

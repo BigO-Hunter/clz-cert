@@ -90,7 +90,7 @@ that target is unchanged and nothing emitted so far can add to it.
 ## Exact resume point
 
 ```bash
-cd ~/bigo-campaign/clz-cert
+cd <repository root>
 ./run_cells.sh 0 45608 16        # ledger-driven: skips ok blocks, retries FAIL
 ```
 Then, in order: (a) check `cells_ledger.txt` reaches 45,608 with no FAIL;

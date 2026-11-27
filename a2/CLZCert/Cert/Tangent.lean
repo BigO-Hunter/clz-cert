@@ -3,7 +3,7 @@ import Mathlib
 /-!
 # CLZ convexity layer — ADOPTED VERBATIM from lane CLZ-D
 
-Source: ~/bigo-campaign/clz-cert-convex/CLZCert/Convexity.lean (their lane owns
+Source: the convex lane's CLZCert/Convexity.lean (vendored under convex/; that lane owns
 it; this copy exists so the CLZ-A2 receipts can consume `tangent_lower` /
 `tangent_assembly` without depending on their in-flight worktree). The file is
 kernel-agnostic (imports Mathlib only): `w w' w''` and the box data enter as

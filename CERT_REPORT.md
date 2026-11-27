@@ -28,8 +28,8 @@ cover).
   post-fix and is unaffected).
 
 ## 7-POINT stage (this lane's active work)
-Target: `SevenPointCert (19/5000)` in Assembly7pt.lean (sibling clone
-~/bigo-campaign/clz-cert-7pt, read-only; their data cert_data_7pt.json:
+Target: `SevenPointCert (19/5000)` in Assembly7pt.lean (the seven-point lane
+`clz-cert-7pt/`, vendored in this repo; its data cert_data_7pt.json:
 145,769 boxes = 131,035 interval + 14,734 exact-LDL-convexity tangent,
 eps' = 0.0038000211759 ≥ 19/5000, margin 2.1e-8). This lane emits the
 per-box receipts: w-cell table receipts (45,608 sinc_bracket

@@ -1,6 +1,6 @@
 # CONVEXITY_REPORT — lane CLZ-D (the tangent layer), 2026-11-07
 
-Work dir: `~/bigo-campaign/clz-cert-convex/` (fresh clone of `clz-cert` at
+Working clone: `clz-cert-convex` (fresh clone of `clz-cert` at
 `886c185`). Files: `CLZCert/Convexity.lean`, `CLZCert/DerivBounds.lean`,
 this report, plus the two import lines added to `CLZCert.lean`.
 

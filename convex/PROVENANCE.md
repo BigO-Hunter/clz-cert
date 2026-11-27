@@ -1,6 +1,6 @@
 # Provenance — clz-cert-convex
 
-Source: `/Users/dmitri.arkhipov/bigo-campaign/clz-cert-convex` at `f5bbeac23ab30f31637fdcb60eec5e1cbe18790a`.
+Source: the `clz-cert-convex` campaign working clone at `f5bbeac23ab30f31637fdcb60eec5e1cbe18790a`.
 
 This is a curated final committed-tree snapshot, not a full-history merge. The local repository's git/build history is approximately 1.8 GB, so history was not imported. Build outputs, logs, caches and files over 50 MB were excluded. Copied 32 tracked files. Oversize omissions: none.
 

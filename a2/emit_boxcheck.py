@@ -21,7 +21,10 @@ exact convention, and emits Lean `decide` checks for a sample (the recorded
 bounds are the generator's, my recomputation is independent).
 """
 import json
+import os
 import sys
+
+SIB = os.environ.get("CLZ_CERT_7PT", os.path.join(os.path.dirname(__file__), "..", "clz-cert-7pt"))
 from fractions import Fraction as F
 
 GRID = 10 ** 45
@@ -74,7 +77,7 @@ def box_lower(box, levels, n):
 
 
 def main():
-    d = json.load(open("/Users/dmitri.arkhipov/bigo-campaign/clz-cert-7pt/cert_data_7pt.json"))
+    d = json.load(open(os.path.join(SIB, "cert_data_7pt.json")))
     wt = json.load(open("mirror_wt.json"))
     n = len(wt)
     levels = build_minlen(wt, n)
@@ -117,7 +120,7 @@ def emit_lean(n_sample=200, seed=7):
     """Lean `decide` checks of the box arithmetic: TARGET ≤ span-term + Σ (p·v)/q,
     with the range minima v as frozen (hash-pinned) data."""
     import random
-    d = json.load(open("/Users/dmitri.arkhipov/bigo-campaign/clz-cert-7pt/cert_data_7pt.json"))
+    d = json.load(open(os.path.join(SIB, "cert_data_7pt.json")))
     wt = json.load(open("mirror_wt.json"))
     n = len(wt)
     levels = build_minlen(wt, n)
@@ -154,7 +157,7 @@ _CACHE = {}
 
 def _load():
     if "d" not in _CACHE:
-        d = json.load(open("/Users/dmitri.arkhipov/bigo-campaign/clz-cert-7pt/cert_data_7pt.json"))
+        d = json.load(open(os.path.join(SIB, "cert_data_7pt.json")))
         wt = json.load(open("mirror_wt.json"))
         _CACHE.update(d=d, wt=wt, n=len(wt), levels=build_minlen(wt, len(wt)))
     return _CACHE

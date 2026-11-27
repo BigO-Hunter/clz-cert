@@ -17,7 +17,7 @@ each box bound against 19/5000 -- a failed verification STOPS that stage.
 from fractions import Fraction as F
 import math, json, pickle, sys, os
 
-SIB = "/Users/dmitri.arkhipov/bigo-campaign/clz-cert-7pt"
+SIB = os.environ.get("CLZ_CERT_7PT", os.path.join(os.path.dirname(__file__), "..", "clz-cert-7pt"))
 OUT = "CLZCert/Cert"
 G45 = 10 ** 45
 GN = 4000

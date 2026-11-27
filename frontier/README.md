@@ -8,7 +8,7 @@ Status: **WAIT** — do not file 0.6730085 anywhere; the true frontier is κ* �
 
 Public design input: the true κ* frontier table and the WAIT verdict keep the board's real frontier legible, so nobody files a dominated number.
 
-[BigO-Hunter](https://github.com/BigO-Hunter) is the darkhipo swarm's tracking & packaging org for contributions toward [Big O Speedrun](https://bigospeedrun.com) — a companion, never the project. Org story: [profile](https://github.com/BigO-Hunter/.github) · [bigo-hunter.github.io](https://bigo-hunter.github.io).
+[BigO-Hunter](https://github.com/BigO-Hunter) is a tracking & packaging org for contributions toward [Big O Speedrun](https://bigospeedrun.com) — a companion, never the project. Org story: [profile](https://github.com/BigO-Hunter/.github) · [bigo-hunter.github.io](https://bigo-hunter.github.io).
 
 ## What work can be done here
 

@@ -2,7 +2,7 @@
 # CLZ-A2 wcell emission runner: emit -> kernel-check -> ledger -> repeat.
 # Resumable: a block is skipped when the ledger already has an "ok" line for it.
 # Usage: ./run_cells.sh [start] [stop] [batch]
-cd "$HOME/bigo-campaign/clz-cert" || exit 1
+cd "$(dirname "$0")/.." || exit 1
 START=${1:-0}
 STOP=${2:-45608}
 BATCH=${3:-64}

@@ -21,9 +21,10 @@ Three interface facts from CONVEXITY_REPORT.md that this script enforces:
 """
 import hashlib
 import json
+import os
 import sys
 
-SIB = "/Users/dmitri.arkhipov/bigo-campaign/clz-cert-7pt/cert_data_7pt.json"
+SIB = os.path.join(os.environ.get("CLZ_CERT_7PT", os.path.join(os.path.dirname(__file__), "..", "clz-cert-7pt")), "cert_data_7pt.json")
 OUT = "tangent_boxes.json"
 GRID = 4000
 G45 = 10 ** 45

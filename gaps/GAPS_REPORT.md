@@ -1,9 +1,9 @@
 # GAPS_REPORT — lane CLZ-B (the three kernel gaps), 2026-11-06
 
-Work dir: `~/bigo-campaign/clz-cert-gaps/` (fresh clone of clz-cert @ bcddb76).
+Working clone: `clz-cert-gaps` (fresh clone of clz-cert @ bcddb76).
 Commits: `8aa2507` (Kernel gaps), `H0 commit` (Gaps.lean + Assembly swap).
-Build: `lake build` fully green; LAKE_JOBS=1, LEAN_NUM_THREADS=1; shared
-Mathlib packages relinked to staircase-port (rev d13f23b723, matches manifest).
+Build: `lake build` fully green; LAKE_JOBS=1, LEAN_NUM_THREADS=1; Mathlib
+oleans per lake-manifest.json (rev d13f23b7; `lake exe cache get`).
 
 ## Per-gap verdicts
 
@@ -67,9 +67,9 @@ Mathlib packages relinked to staircase-port (rev d13f23b723, matches manifest).
   discharge), the merge is line-disjoint (different axiom lines).
 
 ## Landmines hit (for the record)
-- `.lake/packages` must be a symlink to the shared built packages
-  (staircase-port); the scaffold's `.lake-packages-link` is ignored by lake
-  and lake clones EMPTY packages → "unknown module prefix Mathlib".
+- `.lake/packages` must contain BUILT Mathlib oleans: run `lake exe cache get`
+  after checkout (CI's lean-action supplies them via the mathlib cache);
+  empty package clones → "unknown module prefix Mathlib".
 - Factorial postfix `!` is SCOPED notation here: `open scoped Nat` required
   per file; `(e:ℕ)!` does not parse — write `((e)! : ℝ)`.
 - `HasSum.congr` / `tsum_conr` / `mul_sum` / `abs_add` / `pow_le_pow_left`
