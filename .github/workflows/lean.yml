@@ -1,0 +1,31 @@
+name: Lean proof
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  clz-cert:
+    name: Build the corrected three-point certificate apparatus
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      LEAN_NUM_THREADS: 2
+    steps:
+      - name: Check out the proof
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      # Root package only: a2/, convex/, gaps/ and clz-cert-7pt/ are curated
+      # source lanes, and the seven-point verification needs the ~1.9 GB
+      # tables_7pt.pkl dataset that is not vendored here.
+      - name: Build the Lean development
+        uses: leanprover/lean-action@24581d74d674803a25a81b10b059c5c0cdd344c6 # v1
+        with:
+          lake-package-directory: .
+          build: "true"
+          test: "false"
+          lint: "false"
+          use-mathlib-cache: "true"
